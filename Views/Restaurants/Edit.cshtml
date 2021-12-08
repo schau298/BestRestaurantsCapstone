@@ -1,59 +1,65 @@
 ﻿@model FavoriteRestaurantsCapstone.Models.Restaurants
 
-@{
-    ViewData["Title"] = "Edit";
-}
+@{ ViewData["Title"] = "Edit"; }
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.8/dist/semantic.min.css">
+<script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.8/dist/semantic.min.js"></script>
+<html>
+<body>
 
-<h1>Edit</h1>
 
-<h4>Restaurants</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="ID" />
-            <div class="form-group">
-                <label asp-for="RestaurantName" class="control-label"></label>
-                <input asp-for="RestaurantName" class="form-control" />
-                <span asp-validation-for="RestaurantName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="StreetAddress" class="control-label"></label>
-                <input asp-for="StreetAddress" class="form-control" />
-                <span asp-validation-for="StreetAddress" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="City" class="control-label"></label>
-                <input asp-for="City" class="form-control" />
-                <span asp-validation-for="City" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CuisineType" class="control-label"></label>
-                <input asp-for="CuisineType" class="form-control" />
-                <span asp-validation-for="CuisineType" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="AverageCost" class="control-label"></label>
-                <input asp-for="AverageCost" class="form-control" />
-                <span asp-validation-for="AverageCost" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="MenuItems" class="control-label"></label>
-                <input asp-for="MenuItems" class="form-control" />
-                <span asp-validation-for="MenuItems" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+    <h1 class="ui huge header ui primary header">Edit</h1>
+
+    <h4 class="ui sub header ui yellow header">Restaurants</h4>
+    <hr />
+    <div class="ui two column stackable grid">
+        <div class="column">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="ui input error"></div>
+                <input type="hidden" asp-for="ID" />
+                <div class="ui labled input focus">
+                    <label asp-for="RestaurantName" class="ui label"></label>
+                    <input asp-for="RestaurantName" class="ui input" />
+                    <span asp-validation-for="RestaurantName" class="ui input error"></span>
+                </div>
+                <div class="ui labled input focus">
+                    <label asp-for="StreetAddress" class="ui label"></label>
+                    <input asp-for="StreetAddress" class="ui input" />
+                    <span asp-validation-for="StreetAddress" class="ui input error"></span>
+                </div>
+                <div class="ui labled input focus">
+                    <label asp-for="City" class="ui label"></label>
+                    <input asp-for="City" class="ui input" />
+                    <span asp-validation-for="City" class="ui input error"></span>
+                </div>
+                <div class="ui labled input focus">
+                    <label asp-for="CuisineType" class="ui label"></label>
+                    <input asp-for="CuisineType" class="ui input" />
+                    <span asp-validation-for="CuisineType" class="ui input error"></span>
+                </div>
+                <div class="ui labled input focus">
+                    <label asp-for="AverageCost" class="ui label"></label>
+                    <input asp-for="AverageCost" class="ui input" />
+                    <span asp-validation-for="AverageCost" class="ui input error"></span>
+                </div>
+                <div class="ui labled input focus">
+                    <label asp-for="MenuItems" class="ui label"></label>
+                    <input asp-for="MenuItems" class="ui input" />
+                    <span asp-validation-for="MenuItems" class="ui input error"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Save" class="green ui button" />
+                </div>
+            </form>
+        </div>
     </div>
-</div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+    <div>
+        <a asp-action="Index" class="table-bordered ui button">Cancel</a>
+    </div>
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
+</body>
+</html>

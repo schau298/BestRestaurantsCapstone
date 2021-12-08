@@ -6,7 +6,7 @@
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.8/dist/semantic.min.css">
 <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.8/dist/semantic.min.js"></script>
 <html>
-<body style="height:1500px" class="background teal">
+<body style="height:1500px">
     <h1 class="ui huge header ui huge header blue">Michigan's Best Restaurants</h1>
 
     <p>
@@ -15,9 +15,9 @@
     <form asp-action="Index" method="get">
         <div class="form-actions no-color">
             <p>
-                Search by Restaurant Name: <input type="text" name="SearchString" value="@ViewData["currentFilter"]" />
-                <input type="submit" value="Search" class="btn btn-default" />
-                <a class="ui red button" asp-action="Index">Reset Table</a>
+            Search by Restaurant Name: <input type="text" name="SearchString" value="@ViewData["currentFilter"]" />
+                <input type="submit" value="Search" class="ui grey button" />
+                <a class="ui red button" asp-action="Index">Reset Table</a> 
             </p>
         </div>
     </form>
@@ -49,11 +49,6 @@
             @foreach (var item in Model)
             {
 <tr>
-    <td class="collapsing">
-        <div class="ui fitted slider checkbox">
-            <input type="checkbox"> <label></label>
-        </div>
-    </td>
 
     <td>
         @Html.DisplayFor(modelItem => item.RestaurantName)
